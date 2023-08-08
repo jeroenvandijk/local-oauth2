@@ -52,7 +52,6 @@ remove-token <label>")))
 
 
 (defn access-token [opts]
-  (prn opts)
   (:access-token (tokens opts)))
 
 
