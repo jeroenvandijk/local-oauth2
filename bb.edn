@@ -1,0 +1,2 @@
+{:bbin/bin {local-oauth2 {:main-opts ["-f" "src/jeroenvandijk/local_oauth2/cli.cljc"]}}
+ :deps {local/deps {:local/root "."}}}

@@ -1,0 +1,16 @@
+{:paths ["src"]
+ :deps {ring/ring-codec {:mvn/version "1.2.0"}}
+
+ ;; DEV: `clj -A:babashka-clj -M:nREPL -m nrepl.cmdline --interactive`
+
+ :aliases
+ {:nREPL
+  {:extra-deps
+   {nrepl/nrepl {:mvn/version "1.0.0"}}}
+
+
+  :babashka-clj
+  {:extra-deps {org.clojure/clojure {:mvn/version "1.12.0-alpha4"} ;; For babashka.deps support
+                jeroenvandijk/babashka-clj
+                {:git/url "https://github.com/jeroenvandijk/babashka-clj"
+                 :git/sha "5758329b4838b1c2db03d647cf7d46a9ae3d14c0"}}}}}
