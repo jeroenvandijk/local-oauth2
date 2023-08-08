@@ -1,0 +1,44 @@
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+<div>
+  <div class="container">
+    <section id="hero" class="hero">
+      <div class="hero-body">
+        <p id="status" class="title">
+        </p>
+        <p id="message" class="subtitle">
+        </p>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  var params = new URLSearchParams(window.location.search);
+  var status = parseInt(params.get("status"));
+  console.log("stat", status)
+  var body = params.get("body");
+  var heroClass, heroTitle;
+  
+  if(status < 400) {
+    heroClass = "is-success";
+    heroTitle = "Success";    
+  } else if (status < 500) {
+    heroClass = "is-warning";
+    heroTitle = "Warning";    
+  } else {
+    heroClass = "is-danger";
+    heroTitle = "Failed";    
+  }  
+  
+  document.getElementById("hero").classList.add(heroClass)
+  document.getElementById("status").setHTML(heroTitle);
+  document.getElementById("message").setHTML(body);
+</script>
+  
+</body>
+</html>
